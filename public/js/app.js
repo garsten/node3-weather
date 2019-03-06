@@ -10,12 +10,12 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?city='+search.value).then((response) => {
         response.json().then((data) => {
             if (data.error) {
-                console.log(data.error);
+                //console.log(data.error);
                 messageTwo.textContent = data.error;
             } else {
-                console.log(data.forecast);
-                messageOne.textContent = data.location;
-                messageTwo.textContent = data.forecast;
+                //console.log(data);
+                messageOne.textContent = data.forecast;
+                //messageTwo.textContent = data.forecast;
             }
         })
     });

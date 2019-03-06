@@ -10,12 +10,17 @@ const weather = (long, lati, callback) => {
             if (body.code) {
                 callback(body.error, undefined);
             } else {
-                callback(false, {
-                    temp: body.currently.apparentTemperature,
-                    pers: body.currently.precipProbability,
-                    high: body.daily.data[0].temperatureHigh,
-                    forecast: body.daily.summary
-                });
+                callback(false, 
+                    body.daily.summary 
+                    + 'It is currently ' 
+                    + body.currently.apparentTemperature 
+                    + ' degrees celcius with a ' 
+                    + body.currently.precipProbability 
+                    + '% chance for rain. Todays high is ' 
+                    + body.daily.data[0].temperatureHigh
+                    + ' degrees and todays low is '
+                    + body.daily.data[0].temperatureLow
+                    );
             }
         }
     });
