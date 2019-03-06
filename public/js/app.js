@@ -1,5 +1,3 @@
-console.log('app js file in public');
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 
