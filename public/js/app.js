@@ -7,7 +7,7 @@ const messageTwo = document.querySelector('#message-2');
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     messageOne.textContent = 'finding weather forecast...';
-    fetch('http://localhost:3000/weather?city='+search.value).then((response) => {
+    fetch('/weather?city='+search.value).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 console.log(data.error);
@@ -19,6 +19,5 @@ weatherForm.addEventListener('submit', (e) => {
             messageOne.textContent = '';
         })
     });
-    
 });
 
